@@ -1,9 +1,9 @@
 import CardSection from "../components/CardsSection/CardSection";
-
+import Footer from "../components/Footer/Footer";
 import Menu from "../components/Menu/Menu";
 import Nav from "../components/Nav/Nav";
-
-
+import Stays from "../components/Stays/Stays";
+import "./index.css";
 import stays from "../stays.json";
 
 import { useState } from "react";
@@ -76,10 +76,10 @@ function App() {
 
       <div className="container ">
         <Nav handleOpenClose={handleOpenClose} city={city} guests={guests} />
-        
+        <Stays stays={filteredStays} />
         <CardSection stays={filteredStays} />
         {filteredStays.length === 0 ? <NotFount /> : " "}
-       
+        <Footer />
       </div>
     </div>
   );
